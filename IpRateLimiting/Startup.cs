@@ -34,9 +34,9 @@ namespace IpRateLimiting
             //services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
             services.AddInMemoryRateLimiting();
             services.AddControllers();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddInMemoryRateLimiting();
-            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            services.AddTransient<IRateLimitConfiguration, RateLimitConfiguration>();
             //services.AddHttpContextAccessor();
 
         }
